@@ -1,4 +1,4 @@
-// File: /Users/joannalapa/Boilerplate/boilerplate-next-ts-tailwind-i18n/app/[lng]/page.tsx
+// File: /Users/joannalapa/personal-website/personal-website/app/[lng]/page.tsx
 import * as entry from '../../../../app/[lng]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
