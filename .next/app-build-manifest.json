@@ -1,0 +1,14 @@
+{
+  "pages": {
+    "/[lng]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[lng]/page.js"
+    ],
+    "/[lng]/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[lng]/layout.js"
+    ]
+  }
+}
