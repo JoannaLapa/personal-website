@@ -1,6 +1,9 @@
+'use client';
 import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import React from 'react';
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
 /**
  * Props for `Hero`.
@@ -11,6 +14,15 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  * Component for "Hero" Slices.
  */
 const Hero = ({ slice }: HeroProps): React.ReactElement => {
+  const component = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline()
+      tl.fromTo(".name-animation", {x: -100, opacity: 0, rotate: -10}, {x: 0, opacity: 1, rotate: 0})
+  }, component);
+return () => ctx.revert();
+  }, []);
   const renderLetter = (name: KeyTextField, key: string) => {
     if (!name) return;
     return name.split("").map((letter, i) => (
@@ -27,6 +39,7 @@ const Hero = ({ slice }: HeroProps): React.ReactElement => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      ref={component}
     >
       <div className="grid min-h-[70vh] grid-cols-1 items-center">
         <div className="col-start-1 md:row-start-1">
