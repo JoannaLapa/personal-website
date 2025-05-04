@@ -65,7 +65,7 @@ const Hero = ({ slice }: HeroProps): React.ReactElement => {
 
 	return (
 		<Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation} ref={component}>
-			<div className='grid min-h-[70vh] grid-cols-1 items-center'>
+			<div className='grid min-h-[70vh] grid-cols-1 items-center md:grid-cols-2'>
         <Shapes />
 				<div className='col-start-1 md:row-start-1'>
 					<h1
@@ -73,10 +73,10 @@ const Hero = ({ slice }: HeroProps): React.ReactElement => {
 						aria-label={`${slice.primary.firstname} ${slice.primary.lastname}`}>
 						<span className='block text-slate-100'>{renderLetter(slice.primary.firstname, 'first')}</span>
 						<span className='-mt[0.2em] block textslate-100'>{renderLetter(slice.primary.lastname, 'last')}</span>
-						<span className='description block text-slate-100 text-2xl font-bold uppercase teacking-[.2em] md:text-4xl opacity-0'>
+					</h1>
+          <span className='description block text-slate-100 text-2xl font-bold uppercase teacking-[.2em] md:text-4xl opacity-0'>
 							{slice.primary.description}
 						</span>
-					</h1>
 				</div>
 			</div>
 		</Bounded>
